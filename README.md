@@ -2,7 +2,7 @@ SliceComp
 =========
 
 About
-+++++
+-----
 
 Compare slices in Go. This package exports one function:
 
@@ -14,18 +14,18 @@ different lengths.
 
 
 Installation
-++++++++++++
+------------
 
 To install, run `go get github.com/Jeff-Moorhead/slicecomp`.
 
 
 Licensing
-+++++++++
+---------
 
 This package is free to use and distribute under the MIT license.
 
 
 Contact
-+++++++
+-------
 
 Please email jeff.moorhead1@gmail.com with questions or concerns.
