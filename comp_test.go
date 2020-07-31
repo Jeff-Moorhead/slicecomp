@@ -41,3 +41,43 @@ func TestNil(t *testing.T) {
         t.Error("FAILURE: Equals does not consider nil slices equal.")
     }
 }
+
+
+func BenchmarkEquals(b *testing.B) {
+    var arr1 = make([]int, 1000000)
+    var arr2 = make([]int, 1000000)
+
+    for i := 0; i < 1000000; i++ {
+        arr1[i] = i
+        arr2[i] = i
+    }
+    Equals(arr1, arr2)
+}
+
+
+func BenchmarkDifferentLengths(b *testing.B) {
+    var arr1 = make([]int, 999999)
+    var arr2 = make([]int, 1000000)
+
+    for i := 0; i < 999999; i++ {
+        arr1[i] = i
+    }
+
+    for i := 0; i < 1000000; i++ {
+        arr2[i] = i
+    }
+    Equals(arr1, arr2)
+}
+
+
+func BenchmarkWorstCase(b *testing.B) {
+    var arr1 = make([]int, 1000000)
+    var arr2 = make([]int, 1000000)
+
+    for i := 0; i < 1000000; i++ {
+        arr1[i] = i
+        arr2[i] = i
+    }
+    arr2[len(arr2)-1] = 235  // assign the last index to a random int
+    Equals(arr1, arr2)
+}

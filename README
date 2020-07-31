@@ -13,6 +13,12 @@ and false if slices are not equal, including if slices are
 different lengths.
 
 
+Installation
+++++++++++++
+
+To install, run `go get github.com/Jeff-Moorhead/slicecomp`.
+
+
 Licensing
 +++++++++
 
